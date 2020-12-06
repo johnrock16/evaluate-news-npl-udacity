@@ -35,7 +35,7 @@ app.post('/analizeNews', async (req, res) => {
     const urlFetch=`${API_NPL}/sentiment-2.1?${new URLSearchParams({
         key:process.env.API_KEY,
         of:'json',
-        txt:'The Peach State currently has two separate Senate races underway ahead of its 5 January runoff elections. Under Georgia law, when no candidate receives more than 50% of the vote, the top two candidates compete against each other in a later race, called a runoff.',
+        txt:url,
         lang:'en'
     })}`
     fetch(urlFetch,{

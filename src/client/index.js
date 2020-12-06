@@ -9,11 +9,11 @@ const lblSubjectivity = document.getElementById('lblSubjectivity');
 btnEvaluate.addEventListener('click', async (event) => {
     const resolve = await fetch('http://localhost:3000/analizeNews', {
         method: 'POST',
-        body: {
-            url: txtUrl.value
-        }
+        headers:{
+            'content-type':'application/json'
+        },
+        body: JSON.stringify({url: txtUrl.value})
     });
-    console.log(resolve.status)
     if (resolve && resolve.status === 200) {
         try {
             const result = await resolve.json();
