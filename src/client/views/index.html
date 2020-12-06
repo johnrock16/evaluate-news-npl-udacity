@@ -4,25 +4,34 @@
   <meta charset='utf-8'>
   <title>Evaluate news NPL</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' type='text/css' media='screen' href='../styles/index.css'>
-  <link rel='stylesheet' type='text/css' media='screen' href='../styles/globalStyles.css'>
-  <link rel='stylesheet' type='text/css' media='screen' href='../styles/header.css'>
-  <link rel='stylesheet' type='text/css' media='screen' href='../styles/weather.css'>
 </head>
 <body>
   <div class="main-container">
     <header class="header">
       <div class="header-title">
-          <a href="../../index.html"><h1 class="header-title-text">EVALUATE NEWS WITH NPL</h1></a>
+          <h1 class="header-title-text">EVALUATE NEWS WITH NPL</h1>
       </div>
     </header>
-    <div class="main-container"> 
-        <input id="txtUrl" type="text"></input>
-        <button id="btnEvaluate">evaluate news</button>
-        <p id="lblAgreement"></p>
-        <p id="lblConfidence"></p>
-        <p id="lblIrony"></p>
-        <p id="lblSubjectivity"></p>
+    <div class="evaluate-container">
+        <div class="form-container">
+          <h1 class="form-title">Evaluate News</h1>
+          <div class="note-container">
+            <input class="text-input" id="txtUrl" type="text" placeholder="http://newsWebsite.com"></input>
+            <span class="text-input-bottom-text">To Evaluate a News you need paste a URL (http or ftp) on text input</span>
+            <button class="post-button" id="btnEvaluate">
+              <span class="post-button-text">Evaluate News</span>
+            </button>
+          </div>
+        </div>
+        <div class="result-container">
+          <h1 class="form-title">Results</h1>
+          <div class="note-container">
+            <span id="lblAgreement"></span>
+            <span id="lblConfidence"></span>
+            <span id="lblIrony"></span>
+            <span id="lblSubjectivity"></span>
+          </div>
+        </div>
     </div>
   </div>
   <script>

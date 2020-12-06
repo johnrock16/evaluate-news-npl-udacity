@@ -1,0 +1,73 @@
+.evaluate-container{
+    display: grid;
+    border: solid;
+    border-width: 1px;
+    grid-area: ev;
+    grid-template:
+    "form" 1fr
+    "result" 1fr
+    ;
+    flex-direction: column;
+}
+
+.form-container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: antiquewhite;
+    grid-area: form;
+    justify-content: center;
+}
+
+.note-container{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 40%;
+    align-self: center;
+    justify-content: space-around;
+    background-color: antiquewhite;
+}
+
+.form-title{
+    text-align: center;
+}
+
+.text-input{
+    border:solid;
+    border-width: 2px;
+}
+
+.text-input-bottom-text{
+    text-align: center;
+}
+
+.result-container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: bisque;
+    grid-area: result;
+    justify-content: center;
+}
+
+.post-button{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: transform 0.5s ease;
+    align-items: center;
+    background-color: #e77f1d;
+    border:none;
+    align-self: center;
+    width: 150px;
+    height: 60px;
+}
+
+.post-button:hover{
+    transform: scale(1.05);;
+}
+.post-button-text{
+    font-family: 'Roboto';
+    color:white
+}

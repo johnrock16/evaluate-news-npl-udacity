@@ -31,7 +31,6 @@ app.get('/',(req,res)=>{
 
 app.post('/analizeNews', async (req, res) => {
     const {url} = req.body
-
     const urlFetch=`${API_NPL}/sentiment-2.1?${new URLSearchParams({
         key:process.env.API_KEY,
         of:'json',

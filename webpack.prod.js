@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode:'production',
@@ -12,6 +13,14 @@ module.exports = {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                  MiniCssExtractPlugin.loader,
+                  'css-loader',
+                  'sass-loader'
+                ]
             }
         ]
     },
@@ -21,5 +30,8 @@ module.exports = {
             filename: "./index.html",
         }),
         new WorkboxPlugin.GenerateSW(),
+        new MiniCssExtractPlugin({
+            filename: 'styles.css'
+        })
     ]
 };
