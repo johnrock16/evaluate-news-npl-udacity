@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>evaluate news npl</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta charset='utf-8'>
+  <title>Evaluate news NPL</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='../styles/index.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='../styles/globalStyles.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='../styles/header.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='../styles/weather.css'>
 </head>
 <body>
-    <div class="main-container">
-        <input type="text"/>
+  <div class="main-container">
+    <header class="header">
+      <div class="header-title">
+          <a href="../../index.html"><h1 class="header-title-text">EVALUATE NEWS WITH NPL</h1></a>
+      </div>
+    </header>
+    <div class="main-container"> 
+        <input id="txtUrl" type="text"></input>
+        <button id="btnEvaluate">evaluate news</button>
+        <p id="lblAgreement"></p>
+        <p id="lblConfidence"></p>
+        <p id="lblIrony"></p>
+        <p id="lblSubjectivity"></p>
     </div>
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>
