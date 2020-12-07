@@ -3,7 +3,7 @@
 evaluate-news-npl is a web project to Udacity's Front-End Developer nanodegree. This project contains webpack, SCSS, Jest, NodeJS, etc.... The main objectvice of this project is build a web application using web tools and make a integration with a NPL API (I use meaning cloud) for evaluate a news on the URL informed by the user. 
 
 ## Observations
-You need a API_KEY from meaning cloud to use on this project. You can create an account on link below: https://www.meaningcloud.com/developer/create-account
+You need a API_KEY from meaning cloud to use on this project. You can create an account on this link: https://www.meaningcloud.com/developer/create-account
 
 ## Installation
 
