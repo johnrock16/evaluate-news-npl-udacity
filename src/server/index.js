@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const fetch = require('node-fetch');
 const dotenv = require('dotenv');
-let FormData = require('form-data')
 const API_NPL='https://api.meaningcloud.com'
 
 const app = express();
@@ -19,7 +18,6 @@ app.use(bodyParser.json());
 const corsOptions = {
     origin: 'http://localhost:8080',
     optionsSuccessStatus: 200,
-    // methods: "GET"
 }
 app.use(cors(corsOptions));
 
