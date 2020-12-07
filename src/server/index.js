@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const fetch = require('node-fetch');
 const dotenv = require('dotenv');
-const API_NPL='https://api.meaningcloud.com'
+const API_NLP='https://api.meaningcloud.com'
 
 const app = express();
 const port = 3000;
@@ -29,7 +29,7 @@ app.get('/',(req,res)=>{
 
 app.post('/analizeNews', async (req, res) => {
     const {url} = req.body
-    const urlFetch=`${API_NPL}/sentiment-2.1?${new URLSearchParams({
+    const urlFetch=`${API_NLP}/sentiment-2.1?${new URLSearchParams({
         key:process.env.API_KEY,
         of:'json',
         url:url,
