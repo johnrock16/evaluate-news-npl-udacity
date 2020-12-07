@@ -1,6 +1,7 @@
 @import './globalStyles.scss';
 @import './header.scss';
 @import './evaluate.scss';
+@import './footer.scss';
 
 .main-container{
     display: grid;
@@ -11,6 +12,7 @@
     grid-template:
     "hd" 
     "ev" 1fr
+    "ft"
     ;
 }
 
@@ -19,6 +21,7 @@
         grid-template:
         "hd" 
         "ev" 1fr
+        "ft"
         ;
     }
   }

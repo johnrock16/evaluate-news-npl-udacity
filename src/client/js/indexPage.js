@@ -14,7 +14,7 @@ export const IndexPage=()=>{
     })
 
     const evaluateNews= async (url)=>{
-        // if(!verifyUrl(url)) return alert('Invalid Url try with http or ftp');
+        if(!verifyUrl(url)) return alert('Invalid Url try with http or ftp');
         const result = await evaluateNPL(url.value);
         if (result) {
             fillNewsInformation(result);
