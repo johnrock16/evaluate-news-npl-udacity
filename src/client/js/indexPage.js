@@ -1,4 +1,4 @@
-import {evaluateNPL} from './NplAPI';
+import {evaluateNPL} from './NlpAPI';
 import {verifyUrl} from './utils';
 
 const btnEvaluate = document.getElementById('btnEvaluate');
