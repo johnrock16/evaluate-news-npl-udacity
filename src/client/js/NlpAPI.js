@@ -4,11 +4,14 @@ export const evaluateNPL=(url)=>{
     return fetch(`${SERVER_ROOT}/analizeNews`, {
         method: 'POST',
         headers:{
-            'content-type':'application/json'
+            'content-type':'application/json',
+            'accept':'application/json'
         },
         body: JSON.stringify({url})
     }).then((resolve)=>{
-        return resolve.json();
+        if(resolve.status===200){
+            return resolve.json();
+        }
     }).then((result)=>{
         return result
     }).catch((error)=>{
