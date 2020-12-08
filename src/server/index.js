@@ -25,6 +25,22 @@ app.use(express.static('dist'))
 
 app.get('/',(req,res)=>{
     res.sendFile('../../dist/index.html');
+});
+
+app.use('/analizeNews', function (req, res, next) {
+    let isOK=false;
+    if(req.body){
+        const regexUrl=/^(ftp|https):\/\/[^ "]+$/;
+        if(typeof req.body.url==='string' && regexUrl.test(req.body.url)){
+            isOK=true;
+        }
+    }
+    if(isOK){
+        next();
+    }
+    else{
+        res.sendStatus(400);
+    }
 })
 
 app.post('/analizeNews', async (req, res) => {
@@ -41,9 +57,12 @@ app.post('/analizeNews', async (req, res) => {
         if(resolve.status===200){
             return resolve.json();
         }
+        res.sendStatus(500)
     }).then((result)=>{
-        res.send(result)
-    })
+        res.send(result);
+    }).catch((error)=>{
+        console.log(error);
+    });
 
 });
 

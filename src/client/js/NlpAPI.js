@@ -12,6 +12,15 @@ export const evaluateNPL=(url)=>{
         if(resolve.status===200){
             return resolve.json();
         }
+        else if(resolve.status===400){
+            alert('Invalid URL');
+        }
+        else if(resolve.status===500){
+            alert('Evaluate failed');
+        }
+        else{
+            alert('error on server');
+        }
     }).then((result)=>{
         return result
     }).catch((error)=>{
