@@ -1,5 +1,6 @@
 import {verifyUrl} from '../js/utils';
 import {evaluateNPL} from '../js/NlpAPI';
+import {IndexPage} from '../js/indexPage';
 
 
 describe("test url",()=>{
@@ -36,3 +37,35 @@ describe("Request Evaluate NLP",()=>{
         expect(response.confidenty).toBe(100); 
     });
 });
+
+describe("index page",()=>{
+    beforeEach(()=>{
+        global.fetch = jest.fn().mockImplementation(()=> {
+            const p = new Promise((resolve, reject) => {
+              resolve({
+                status:200,
+                json: ()=>{ 
+                  return {confidence: 100,agreement:'Agreement',irony:'IRONIC',subjectivity:'SUBJECTIVE'}
+                }
+              });
+            });
+            return p;
+        });
+    });
+    test('index', () => {
+        document.body.innerHTML =
+        '<div>' +
+        '  <button id="btnEvaluate" />' +
+        '  <input id="txtUrl" value="https://www.bbc.com/news/health-55228421"></input>' +
+        '  <span id="lblAgreement"></span>' +
+        '  <span id="lblConfidence"></span>' +
+        '  <span id="lblIrony"></span>' +
+        '  <span id="lblSubjectivity"></span>' +
+        '</div>';
+        IndexPage();
+        btnEvaluate.click();
+        setTimeout(()=>{
+            expect(lblConfidence.innerHTML).toEqual('100');
+        },5000)
+    });
+})

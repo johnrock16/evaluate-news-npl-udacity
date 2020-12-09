@@ -1,23 +1,24 @@
 import {evaluateNPL} from './NlpAPI';
 import {verifyUrl} from './utils';
 
-const btnEvaluate = document.getElementById('btnEvaluate');
-const txtUrl = document.getElementById('txtUrl');
-const lblAgreement = document.getElementById('lblAgreement');
-const lblConfidence = document.getElementById('lblConfidence');
-const lblIrony = document.getElementById('lblIrony');
-const lblSubjectivity = document.getElementById('lblSubjectivity');
-
 export const IndexPage=()=>{
-    btnEvaluate.addEventListener('click',(event) => {
-        evaluateNews(txtUrl.value)
+    const btnEvaluate = document.getElementById('btnEvaluate');
+    const txtUrl = document.getElementById('txtUrl');
+    const lblAgreement = document.getElementById('lblAgreement');
+    const lblConfidence = document.getElementById('lblConfidence');
+    const lblIrony = document.getElementById('lblIrony');
+    const lblSubjectivity = document.getElementById('lblSubjectivity');
+
+    btnEvaluate.addEventListener('click',async (event) => {
+        const result=await evaluateNews(txtUrl.value);
+        if(result){
+            fillNewsInformation(result);
+        }
     })
     const evaluateNews= async (url)=>{
         if(url && !verifyUrl(url)) return alert('Invalid Url try with https or ftp');
         const result = await evaluateNPL(url);
-        if (result) {
-            fillNewsInformation(result);
-        }
+        return result;
     }
     const fillNewsInformation=({agreement,confidence,irony,subjectivity})=>{
         lblAgreement.innerHTML=agreement;
@@ -26,4 +27,3 @@ export const IndexPage=()=>{
         lblSubjectivity.innerHTML=subjectivity;
     }
 }
-
