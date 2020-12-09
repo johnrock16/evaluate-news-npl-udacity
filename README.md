@@ -33,7 +33,7 @@ npm run build-prod
 ## Tests
 To test using JEST:
 ```bash
-npm run test-client
+npm run test
 ```
 
 ## Contributing

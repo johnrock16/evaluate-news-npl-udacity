@@ -52,7 +52,7 @@ describe("index page",()=>{
             return p;
         });
     });
-    test('index', () => {
+    test('button click', () => {
         document.body.innerHTML =
         '<div>' +
         '  <button id="btnEvaluate" />' +
